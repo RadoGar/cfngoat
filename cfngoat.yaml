@@ -44,9 +44,7 @@ Resources:
         - Key: Name
           Value: !Sub "${AWS::AccountId}-${CompanyName}-${Environment}-ec2" 
         - Key: yor_trace
-          Value: 595b9b79-bd1e-45fd-a297-d521ebdf15e7
-        - Key: git_org
-          Value: bridgecrewio
+          Value: 595b9b79-bd1e-45fd-a297-d521ebdf15e7        
         - Key: git_repo
           Value: cfngoat
         - Key: git_file
@@ -69,7 +67,7 @@ Resources:
           export AWS_ACCESS_KEY_ID=AKIAIOSFODNN7EXAMAAA
           export AWS_SECRET_ACCESS_KEY=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
           export AWS_DEFAULT_REGION=us-west-2
-          echo "<h1>Deployed via CloudFormation</h1>" | sudo tee /var/www/html/index.html
+          echo "<h1>Deployed via CloudFormation</h1>" | sudo tee /var/www/html/index.html 
   WebHostStorage:
     # Unencrypted Volume
     Type: AWS::EC2::Volume
@@ -102,7 +100,7 @@ Resources:
 
   ### CFN Does not Support Volume Snapshot
   EBSAttachment:
-    Type: AWS::EC2::VolumeAttachment
+    Type: AWS::EC2::VolumeAttachment 
     Properties:
       InstanceId: !Ref EC2Instance
       VolumeId: !Ref WebHostStorage
@@ -119,7 +117,7 @@ Resources:
       - IpProtocol: tcp
         FromPort: 80
         ToPort: 80
-        CidrIp: 0.0.0.0/0
+        CidrIp: 0.0.0.0/0 
       - IpProtocol: tcp
         FromPort: 22
         ToPort: 22
@@ -136,7 +134,7 @@ Resources:
         - Key: git_commit
           Value: 42153ba22c28f5c0bff388b24a6344137a5dfe26
         - Key: git_modifiers
-          Value: jonathan.jozwiak/nimrodkor
+          Value: jonathan.jozwiak/nimrodkor 
         - Key: git_last_modified_at
           Value: "2021-08-23 13:51:41"
         - Key: git_last_modified_by
@@ -153,9 +151,7 @@ Resources:
       EnableDnsHostnames: True
       Tags:
         - Key: Name
-          Value: !Sub "${AWS::AccountId}-${CompanyName}-${Environment}-vpc"
-        - Key: git_org
-          Value: bridgecrewio
+          Value: !Sub "${AWS::AccountId}-${CompanyName}-${Environment}-vpc"        
         - Key: git_repo
           Value: cfngoat
         - Key: git_file
@@ -202,7 +198,7 @@ Resources:
   WebSubnet2:
     Type: AWS::EC2::Subnet
     Properties:
-      VpcId: !Ref WebVPC
+      VpcId: !Ref WebVPC 
       CidrBlock: 172.16.11.0/24
       AvailabilityZone:
         Fn::Select:
@@ -238,7 +234,7 @@ Resources:
           Value: 39d8202d-7126-40dd-afa0-4554eeadada4
         - Key: git_org
           Value: bridgecrewio
-        - Key: git_repo
+        - Key: git_repo 
           Value: cfngoat
         - Key: git_file
           Value: cfngoat.yaml
@@ -272,7 +268,7 @@ Resources:
           Value: jonathan.jozwiak@googlemail.com
         - Key: yor_trace
           Value: 0613f2a9-ccbb-4e77-839b-bc0a7681bd9c
-        - Key: git_org
+        - Key: git_org 
           Value: bridgecrewio
         - Key: git_repo
           Value: cfngoat
@@ -314,7 +310,7 @@ Resources:
         - Key: git_repo
           Value: cfngoat
         - Key: git_file
-          Value: cfngoat.yaml
+          Value: cfngoat.yaml 
         - Key: git_commit
           Value: b1681f3806db6656faf4107ceceb77e9364e59b7
         - Key: git_modifiers
@@ -348,7 +344,7 @@ Resources:
           Value: jonathan.jozwiak
   FlowBucket:
     Type: AWS::S3::Bucket
-    DeletionPolicy: Delete
+    DeletionPolicy: Delete 
     Properties:
       BucketName: !Sub "${AWS::AccountId}-${CompanyName}-${Environment}-flowlogs"
       Tags:
@@ -430,7 +426,7 @@ Resources:
       Description: !Sub "${AWS::AccountId}-${CompanyName}-${Environment}-logs bucket key"
       PendingWindowInDays: 7
       KeyPolicy:
-        Version: '2012-10-17'
+        Version: '2012-10-17' 
         Id: key-default-1
         Statement:
         - Sid: Enable IAM User Permissions

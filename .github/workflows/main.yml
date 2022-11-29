@@ -1,4 +1,4 @@
-name: CPSP-workshop
+name: PrismaCloud-Integration
 on:
   push:
     branches:

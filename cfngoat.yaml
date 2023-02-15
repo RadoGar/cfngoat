@@ -30,6 +30,7 @@ Resources:
   ####################
   EC2Instance:
     Type: AWS::EC2::Instance
+    
     Properties:
       AvailabilityZone:
         Fn::Select:
@@ -60,6 +61,7 @@ Resources:
       UserData:
         Fn::Base64: |
           #!/bin/bash
+          
           sudo yum -y update
           sudo yum -y install httpd php php-mysqlnd
           sudo systemctl enable httpd
@@ -79,6 +81,7 @@ Resources:
       #Encrypted: False
       Size: 1
       Tags:
+      
         - Key: Name
           Value: !Sub "${AWS::AccountId}-${CompanyName}-${Environment}-ebs"
         - Key: git_last_modified_by
@@ -110,6 +113,7 @@ Resources:
   WebNodeSG:
     Type: AWS::EC2::SecurityGroup
     Properties:
+    
       GroupName: !Sub "${AWS::AccountId}-${CompanyName}-${Environment}-sg"
       GroupDescription: !Sub "${AWS::AccountId}-${CompanyName}-${Environment} Security Group"
       VpcId: !Ref WebVPC

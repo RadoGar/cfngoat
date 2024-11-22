@@ -73,6 +73,10 @@ Resources:
           Value: "2020-07-15 20:22:37"
         - Key: git_org
           Value: RadoGar
+        - Key: PC
+          Value: warsztaty
+        - Key: Owner
+          Value: RGA
   VPC:
     Type: AWS::EC2::VPC
     Properties:
@@ -88,6 +92,10 @@ Resources:
           Value: cfngoat
         - Key: git_org
           Value: RadoGar
+        - Key: Owner
+          Value: RGA
+        - Key: PC
+          Value: warsztaty
   InternetGateway:
     Type: "AWS::EC2::InternetGateway"
     Properties:
@@ -100,6 +108,10 @@ Resources:
           Value: RadoGar
         - Key: git_repo
           Value: cfngoat
+        - Key: PC
+          Value: warsztaty
+        - Key: Owner
+          Value: RGA
   VPCGatewayAttachment:
     Type: "AWS::EC2::VPCGatewayAttachment"
     Properties:
@@ -120,6 +132,10 @@ Resources:
           Value: cfngoat
         - Key: git_org
           Value: RadoGar
+        - Key: PC
+          Value: warsztaty
+        - Key: Owner
+          Value: RGA
   PrivateRouteTable01:
     Type: AWS::EC2::RouteTable
     Properties:
@@ -145,6 +161,10 @@ Resources:
           Value: 444e964a-35b8-420d-97fa-80a9beac4225
         - Key: git_org
           Value: RadoGar
+        - Key: PC
+          Value: warsztaty
+        - Key: Owner
+          Value: RGA
   PrivateRouteTable02:
     Type: AWS::EC2::RouteTable
     Properties:
@@ -170,6 +190,10 @@ Resources:
           Value: RadoGar
         - Key: git_org
           Value: bridgecrewio
+        - Key: PC
+          Value: warsztaty
+        - Key: Owner
+          Value: RGA
   PublicRoute:
     DependsOn:
     - VPCGatewayAttachment
@@ -214,6 +238,10 @@ Resources:
           Value: RadoGar
         - Key: git_repo
           Value: cfngoat
+        - Key: PC
+          Value: warsztaty
+        - Key: Owner
+          Value: RGA
   NatGateway02:
     DependsOn:
     - NatGatewayEIP2
@@ -242,6 +270,10 @@ Resources:
           Value: RadoGar
         - Key: git_org
           Value: bridgecrewio
+        - Key: PC
+          Value: warsztaty
+        - Key: Owner
+          Value: RGA
   NatGatewayEIP1:
     DependsOn:
     - VPCGatewayAttachment
@@ -265,6 +297,10 @@ Resources:
           Value: bridgecrewio
         - Key: git_repo
           Value: cfngoat
+        - Key: PC
+          Value: warsztaty
+        - Key: Owner
+          Value: RGA
   NatGatewayEIP2:
     DependsOn:
     - VPCGatewayAttachment
@@ -288,6 +324,10 @@ Resources:
           Value: mike@bridgecrew.io
         - Key: yor_trace
           Value: 4e306793-ec95-48e0-b74a-88e152520518
+        - Key: PC
+          Value: warsztaty
+        - Key: Owner
+          Value: RGA
   PublicSubnet01:
     Type: AWS::EC2::Subnet
     Metadata: 
@@ -311,6 +351,10 @@ Resources:
           Value: RadoGar
         - Key: git_repo
           Value: cfngoat
+        - Key: PC
+          Value: warsztaty
+        - Key: Owner
+          Value: RGA
   PublicSubnet02:
     Type: AWS::EC2::Subnet
     Metadata:
@@ -344,6 +388,10 @@ Resources:
           Value: nimrodkor@gmail.com
         - Key: yor_trace
           Value: 7c173256-a4fd-401b-bc74-4b1d528722b5
+        - Key: PC
+          Value: warsztaty
+        - Key: Owner
+          Value: RGA
   PrivateSubnet01:
     Type: AWS::EC2::Subnet
     Metadata:
@@ -379,6 +427,10 @@ Resources:
           Value: 52127b2051fa27ca5168b17798cd4f63723a13f1
         - Key: git_modifiers
           Value: mike/nimrodkor
+        - Key: PC
+          Value: warsztaty
+        - Key: Owner
+          Value: RGA
   PrivateSubnet02:
     Type: AWS::EC2::Subnet
     Metadata:
@@ -414,6 +466,10 @@ Resources:
           Value: bridgecrewio
         - Key: git_repo
           Value: cfngoat
+        - Key: PC
+          Value: warsztaty
+        - Key: Owner
+          Value: RGA
   PublicSubnet01RouteTableAssociation:
     Type: AWS::EC2::SubnetRouteTableAssociation
     Properties:
@@ -456,6 +512,10 @@ Resources:
           Value: "2020-07-15 20:22:37"
         - Key: git_last_modified_by
           Value: mike@bridgecrew.io
+        - Key: PC
+          Value: warsztaty
+        - Key: Owner
+          Value: RGA
   EKSCluster:
     Type: AWS::EKS::Cluster
     Properties:

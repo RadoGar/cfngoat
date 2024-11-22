@@ -60,6 +60,10 @@ Resources:
           Value: nimrodkor@gmail.com
         - Key: git_org
           Value: RadoGar
+        - Key: PC
+          Value: warsztaty
+        - Key: Owner
+          Value: RGA
       UserData:
         Fn::Base64: |
           #!/bin/bash
@@ -83,6 +87,10 @@ Resources:
       #Encrypted: False
       Size: 1
       Tags:
+        - Key: PC
+          Value: warsztaty
+        - Key: Owner
+          Value: RGA
       
         - Key: Name
           Value: !Sub "${AWS::AccountId}-${CompanyName}-${Environment}-ebs"
@@ -149,6 +157,10 @@ Resources:
           Value: RadoGar
         - Key: git_org
           Value: bridgecrewio
+        - Key: Owner
+          Value: RGA
+        - Key: PC
+          Value: warsztaty
   WebVPC:
     Type: AWS::EC2::VPC
     Properties:
@@ -174,6 +186,10 @@ Resources:
           Value: eeb90d09-d35e-440f-ac67-2f96e472b2e0
         - Key: git_org
           Value: RadoGar
+        - Key: Owner
+          Value: RGA
+        - Key: PC
+          Value: warsztaty
   WebSubnet:
     Type: AWS::EC2::Subnet
     Properties:
@@ -203,6 +219,10 @@ Resources:
           Value: "2021-08-23 13:51:41"
         - Key: git_last_modified_by
           Value: nimrodkor@gmail.com
+        - Key: PC
+          Value: warsztaty
+        - Key: Owner
+          Value: RGA
   WebSubnet2:
     Type: AWS::EC2::Subnet
     Properties:
@@ -232,6 +252,10 @@ Resources:
           Value: cfngoat.yaml
         - Key: git_commit
           Value: 42153ba22c28f5c0bff388b24a6344137a5dfe26
+        - Key: Owner
+          Value: RGA
+        - Key: PC
+          Value: warsztaty
   WebIGW:
     Type: AWS::EC2::InternetGateway
     Properties:
@@ -254,6 +278,10 @@ Resources:
           Value: "2020-04-25 01:13:26"
         - Key: git_last_modified_by
           Value: jonathan.jozwiak@googlemail.com
+        - Key: PC
+          Value: warsztaty
+        - Key: Owner
+          Value: RGA
   InternetGatewayAttachment:
     Type: AWS::EC2::VPCGatewayAttachment
     Properties:
@@ -282,6 +310,10 @@ Resources:
           Value: cfngoat
         - Key: git_file
           Value: cfngoat.yaml
+        - Key: Owner
+          Value: RGA
+        - Key: PC
+          Value: warsztaty
   WebDefaultPublicRoute:
     Type: AWS::EC2::Route
     DependsOn:
@@ -325,6 +357,10 @@ Resources:
           Value: jonathan.jozwiak
         - Key: git_last_modified_at
           Value: "2020-04-25 01:13:26"
+        - Key: PC
+          Value: warsztaty
+        - Key: Owner
+          Value: RGA
   VpcFlowLogs:
     Type: AWS::EC2::FlowLog
     Properties:
@@ -350,6 +386,10 @@ Resources:
           Value: b1681f3806db6656faf4107ceceb77e9364e59b7
         - Key: git_modifiers
           Value: jonathan.jozwiak
+        - Key: PC
+          Value: warsztaty
+        - Key: Owner
+          Value: RGA
   FlowBucket:
     Type: AWS::S3::Bucket
     DeletionPolicy: Delete 
@@ -374,6 +414,10 @@ Resources:
           Value: "2021-08-23 13:51:41"
         - Key: git_last_modified_by
           Value: nimrodkor@gmail.com
+        - Key: PC
+          Value: warsztaty
+        - Key: Owner
+          Value: RGA
 
   #############
   ###  IAM  ###
@@ -403,6 +447,10 @@ Resources:
           Value: 42153ba22c28f5c0bff388b24a6344137a5dfe26
         - Key: git_modifiers
           Value: jonathan.jozwiak/nimrodkor
+        - Key: PC
+          Value: warsztaty
+        - Key: Owner
+          Value: RGA
   AccessKey:
     Type: AWS::IAM::AccessKey
     Properties:
@@ -460,6 +508,10 @@ Resources:
           Value: cfngoat.yaml
         - Key: git_commit
           Value: 42153ba22c28f5c0bff388b24a6344137a5dfe26
+        - Key: PC
+          Value: warsztaty
+        - Key: Owner
+          Value: RGA
   LogsKeyAlias:
     Type: AWS::KMS::Alias
     Properties:
@@ -513,6 +565,10 @@ Resources:
           Value: nimrodkor@gmail.com
         - Key: yor_trace
           Value: ca176a04-46cc-411d-a062-222ae03835a8
+        - Key: PC
+          Value: warsztaty
+        - Key: Owner
+          Value: RGA
   DefaultDBOptionGroup:
     Type: AWS::RDS::OptionGroup
     Properties:
@@ -541,6 +597,10 @@ Resources:
           Value: jonathan.jozwiak/nimrodkor
         - Key: git_last_modified_at
           Value: "2021-08-23 13:51:41"
+        - Key: PC
+          Value: warsztaty
+        - Key: Owner
+          Value: RGA
   DefaultDBParameterGroup:
     Type: AWS::RDS::DBParameterGroup
     Properties:
@@ -570,6 +630,10 @@ Resources:
           Value: cfngoat.yaml
         - Key: git_commit
           Value: 42153ba22c28f5c0bff388b24a6344137a5dfe26
+        - Key: PC
+          Value: warsztaty
+        - Key: Owner
+          Value: RGA
   DefaultSubnetGroup:
     Type: AWS::RDS::DBSubnetGroup
     Properties:
@@ -599,6 +663,10 @@ Resources:
           Value: bridgecrewio
         - Key: git_repo
           Value: cfngoat
+        - Key: PC
+          Value: warsztaty
+        - Key: Owner
+          Value: RGA
   DefaultSG:
     Type: AWS::EC2::SecurityGroup
     Properties:
@@ -631,6 +699,10 @@ Resources:
           Value: jonathan.jozwiak@googlemail.com
         - Key: yor_trace
           Value: 3d3b2421-0886-4ab8-88ec-e4bef646fdf6
+        - Key: PC
+          Value: warsztaty
+        - Key: Owner
+          Value: RGA
   EC2Profile:
     Type: AWS::IAM::InstanceProfile
     Properties:
@@ -674,6 +746,10 @@ Resources:
           Value: bridgecrewio
         - Key: git_repo
           Value: cfngoat
+        - Key: PC
+          Value: warsztaty
+        - Key: Owner
+          Value: RGA
   EC2Policy:
     Type: AWS::IAM::Policy
     Properties:
@@ -723,6 +799,10 @@ Resources:
           Value: bridgecrewio
         - Key: git_repo
           Value: cfngoat
+        - Key: PC
+          Value: warsztaty
+        - Key: Owner
+          Value: RGA
       UserData:
         Fn::Base64: !Sub |
           #!/bin/bash
@@ -879,6 +959,10 @@ Resources:
           Value: 42153ba22c28f5c0bff388b24a6344137a5dfe26
         - Key: git_modifiers
           Value: jonathan.jozwiak/nimrodkor
+        - Key: PC
+          Value: warsztaty
+        - Key: Owner
+          Value: RGA
   AnalysisLambda:
     Type: AWS::Lambda::Function
     Properties:
@@ -914,6 +998,10 @@ Resources:
           Value: jonathan.jozwiak/nimrodkor
         - Key: git_last_modified_at
           Value: "2021-08-23 13:51:41"
+        - Key: PC
+          Value: warsztaty
+        - Key: Owner
+          Value: RGA
 
   ############
   ###  S3  ###
@@ -944,6 +1032,10 @@ Resources:
           Value: RadoGar
         - Key: git_org
           Value: bridgecrewio
+        - Key: PC
+          Value: warsztaty
+        - Key: Owner
+          Value: RGA
       VersioningConfiguration:
         Status: Enabled
 
@@ -974,6 +1066,10 @@ Resources:
           Value: bridgecrewio
         - Key: git_repo
           Value: cfngoat
+        - Key: PC
+          Value: warsztaty
+        - Key: Owner
+          Value: RGA
   OperationsBucket:
     # not encrypted, no access logs
     Type: AWS::S3::Bucket
@@ -1002,6 +1098,10 @@ Resources:
           Value: jonathan.jozwiak@googlemail.com
         - Key: yor_trace
           Value: 9e00e7c2-b27c-4141-af5a-2d90c9632a23
+        - Key: PC
+          Value: warsztaty
+        - Key: Owner
+          Value: RGA
   DataScienceBucket:
     # not encrypted
     Type: AWS::S3::Bucket
@@ -1033,6 +1133,10 @@ Resources:
           Value: RadoGar
         - Key: git_org
           Value: bridgecrewio
+        - Key: PC
+          Value: warsztaty
+        - Key: Owner
+          Value: RGA
   LogsBucket:
     # not encrypted
     Type: AWS::S3::Bucket
@@ -1066,6 +1170,10 @@ Resources:
           Value: "2021-08-23 13:51:41"
         - Key: git_last_modified_by
           Value: nimrodkor@gmail.com
+        - Key: PC
+          Value: warsztaty
+        - Key: Owner
+          Value: RGA
 
    ########################
    ### Clean S3 Buckets ###
@@ -1118,6 +1226,10 @@ Resources:
           Value: bridgecrewio
         - Key: git_repo
           Value: cfngoat
+        - Key: PC
+          Value: warsztaty
+        - Key: Owner
+          Value: RGA
   CleanBucketFunction:
     Type: "AWS::Lambda::Function"
     DependsOn:
@@ -1272,6 +1384,10 @@ Resources:
           Value: cfngoat
         - Key: git_file
           Value: cfngoat.yaml
+        - Key: PC
+          Value: warsztaty
+        - Key: Owner
+          Value: RGA
   CleanFlowBucketOnDelete:
     Type: Custom::cleanupflowbucket
     Properties:
